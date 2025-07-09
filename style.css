@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #fff;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to right, #3c6787,#fdeab1);
+  background-color: #3b4156;
+  font-family: "Urbanist", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin-top: 4.8rem;
+}
+hr {
+  margin-bottom: 3.2rem;
+}
+p,
+li,
+button {
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  font-family: "Urbanist", sans-serif;
+  line-height: 1.6;
+}
+button {
+  background-color: #f5ee62;
+  padding: 0.6rem 2.4rem;
+  border-radius: 10rem;
+  margin-right: 3.6rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+
+  &:hover {
+    box-shadow: inset 0 0 0 0.2rem #f5ee62;
+    background-color: transparent;
+    color: #f5ee62;
+  }
+}
+
+section {
+  width: 32rem;
+  height: 48rem;
+
+  background-image: linear-gradient(to right, #e5ea8d,#cb6bee);
+  text-align: center;
+  padding: 2.4rem;
+  border-radius: 1rem;
+}
+p {
+  
+  font-size: 9.8rem;
+}
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 2.4rem;
+}
+button {
+  background-color: #fff;
+  margin: 0;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+.resetValue p {
+  font-size: 1.8rem;
+  margin-top: 0.6rem;
+}
+@media (max-width: 768px) {
+  section {
+    width: 100%;
+    padding: 1.6rem;
+  }
+
+  #countDown {
+    font-size: 6rem;
+  }
+
+  button {
+    font-size: 1.4rem;
+    padding: 0.4rem 1.6rem;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .resetValue p {
+    font-size: 1.6rem;
+  }
+}

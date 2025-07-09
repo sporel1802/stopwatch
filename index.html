@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section>
+        <p id="countDown">0</p>
+        <div class="buttons">
+            <button class="start_btn">Start</button>
+            <button class="reset_btn">Reset</button>
+            <button class="stop_btn">Stop</button>
+            <button class="time_btn">getTime</button>
+            <button class="clear_btn">clearTime</button>
+        </div>
+
+        <div class="resetValue">
+
+        </div>
+    </section>
+    <script>
+        const countDown = document.getElementById("countDown")
+        const resetValue = document.querySelector(".resetValue");
+
+        let cont = 0;
+        let stops;
+
+        //star part
+        const starttimer = () => {
+            stops = setInterval(() => {
+                countDown.innerHTML = cont++;
+            }, 1000)
+        };
+        //stop part
+        const stop = () => {
+            clearInterval(stops);
+
+        }
+        //reset
+        const reset = () => {
+            cont = 0;
+            countDown.innerHTML = cont;//count=0
+            clearInterval(stops);
+        }
+
+        const gettime = () => {
+            const para = document.createElement("p");
+            para.innerHTML = `The time is ${cont - 1}`;
+            resetValue.appendChild(para);
+        };
+        const clear = () => {
+            resetValue.innerHTML = " ";
+
+        };
+
+
+        //event listners
+        document.querySelector(".start_btn").addEventListener('click', starttimer);
+
+        document.querySelector(".reset_btn").addEventListener('click', reset);
+
+        document.querySelector(".stop_btn").addEventListener('click', stop);
+
+        document.querySelector(".time_btn").addEventListener('click', gettime);
+
+        document.querySelector(".clear_btn").addEventListener('click', clear);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
